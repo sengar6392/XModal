@@ -73,6 +73,7 @@ const Form = ({ setShowForm }) => {
             onChange={(e) => setDob(e.target.value)}
           />
           <br />
+        </form>
           <button
             className="submit-button"
             type="submit"
@@ -80,7 +81,6 @@ const Form = ({ setShowForm }) => {
           >
             Submit
           </button>
-        </form>
       </div>
     </div>
   );
