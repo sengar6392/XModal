@@ -6,17 +6,16 @@ const Form = ({ setShowForm }) => {
   const [phone, setPhone] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(phone.length!==10){
-        alert("Invalid phone number. Please enter a 10-digit phone number.")
+    if (phone.length !== 10) {
+      alert("Invalid phone number. Please enter a 10-digit phone number.");
     }
-    let date=new Date(dob)
-    if(date>new Date()){
-        alert("njvbkds")
-    }
-    else{
-        e.target.reset()
-        setDob("")
-        setPhone("")
+    let date = new Date(dob);
+    if (date > new Date()) {
+      alert("njvbkds");
+    } else {
+      e.target.reset();
+      setDob("");
+      setPhone("");
     }
   };
   return (
@@ -33,6 +32,7 @@ const Form = ({ setShowForm }) => {
       }}
     >
       <form
+        className="modal-content"
         onClick={(e) => e.stopPropagation()}
         onSubmit={handleSubmit}
         style={{
@@ -73,7 +73,11 @@ const Form = ({ setShowForm }) => {
           onChange={(e) => setDob(e.target.value)}
         />
         <br />
-        <button className="submit-button" type="submit" style={{ marginBlock: "2rem" }}>
+        <button
+          className="submit-button"
+          type="submit"
+          style={{ marginBlock: "2rem" }}
+        >
           Submit
         </button>
       </form>
