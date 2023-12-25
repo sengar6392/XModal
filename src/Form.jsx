@@ -21,7 +21,7 @@ const Form = ({ setShowForm }) => {
   return (
     <div
       onClick={() => setShowForm(false)}
-      className="modal-content"
+      className="modal"
       style={{
         backgroundColor: "rgba(0,0,0,0.5)",
         position: "fixed",
