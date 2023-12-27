@@ -1,17 +1,28 @@
-import { useState } from "react";
-import "./App.css";
-import Form from "./Form";
 
-function App() {
-  const [showForm, setShowForm] = useState(false);
-  
+import './App.css'
+import { useState } from "react";
+import User from './User';
+
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div style={{minHeight:"100vh"}}>
+    <div className="App">
       <h1>User Details Modal</h1>
-      <button onClick={()=>setShowForm(true)}>Open Form</button>
-      {showForm && <Form setShowForm={setShowForm}/>}
+      <button onClick={openModal} className="submit-button">
+        Open Form
+      </button>
+      {isOpen && <User closeModal={closeModal} />}
     </div>
   );
-}
+};
 
 export default App;
